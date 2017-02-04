@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>secretshow</title>
+    <link href="https://file.myfontastic.com/n6vo44Re5QaWo8oCKShBs7/icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.1.0/angularfire.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyChCcZvVWZTQtF8VD9_Dx_7vqiJz4xY4Xg",
+        authDomain: "secretshow-121ce.firebaseapp.com",
+        databaseURL: "https://secretshow-121ce.firebaseio.com",
+        storageBucket: "secretshow-121ce.appspot.com",
+        messagingSenderId: "486853856266"
+      };
+      firebase.initializeApp(config);
+    </script>
+    <link href="css/main.css" rel="stylesheet">
+  </head>
+  <body ng-app="MyApp" ng-controller="MyController">
+    <section id="hero">
+        <h1 id="title"> <span> [</span> thesecretshow <span>]</span> </h1>
+    </section>
+
+    <div id = "fixedLogo">
+      <p>[ss]</p>
+    </div>
+
+    <section id="main" class="slant">
+      <div class="reverseSlant">
+        <iframe id="vid" width="560" height="315" src="https://www.youtube.com/embed/bCu5N38ikls" frameborder="0" allowfullscreen></iframe>
+        <blockquote> The Secret Show was slated to be one of adult swims classic core
+          programing back in 2005 but due to budgetary issues and a general lack
+          of public interest in the show caused it to have one and only airing on
+          April 20th, 2005. The tape of the only airing was then filed deep within
+          storage at adult swims Georgia HQ until now. Our team has found the footage,
+          rendered it from tape on to this new digital medium and are now broadcasting
+          it freely for the public at large to enjoy. If you enjoyed the show please
+          tweet at adult swim #bringbackthesecretshow so they may hopefully fund
+          more episodes in the future.
+        </blockquote>
+        <a href="https://twitter.com/intent/tweet?button_hashtag=#BringBackTheSecretShow" class="twitter-hashtag-button" data-size="large" data-text="@adultswim Approved by humans " data-show-count="false"></a>
+        <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+      </div>
+    </section>
+
+    <section id="form" class="slant">
+      <div class="reverseSlant">
+        <h1>#BringBackTheSecretShow</h1>
+        <h2>Sign the petition!</h2>
+        <form ng-submit="add()">
+          <input id="gEmail" type="email" name="emailInput" placeholder="Your email here..."/>
+          <button id='sign' type="submit">Sign!</button>
+        </form>
+        <p><a href="https://twitter.com/3blindsheep">
+            <span class="sociocon socicon-twitter"></span>
+          </a>
+          <a href="https://www.facebook.com/peter.ness.359">
+            <span class="sociocon socicon-facebook"></span>
+          </a>
+          <a href="https://www.youtube.com/channel/UCxcwmFqUvmyocxhod15SAAg">
+            <span class="sociocon socicon-youtube"></span>
+          </a>
+        </p>
+      </div>
+    </section>
+
+    <footer>
+      <div id="footerContent">
+        <p>© The Secret Show 2005 <a href="http://www.adultswim.com/"><span class="as">[as]</span></a></p>
+        <p> Site by <a href="https://www.linkedin.com/in/spencer-lee-76b638112?trk=hp-identity-photo"> Spencer Lee </a> and <a href="https://www.linkedin.com/in/emily-kaneff-278245108"> Emily Kaneff </a></p>
+      </div>
+    </footer>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="js/bower_components/konami-js/konami.js"> </script>
+  <script src="js/twitter.js"> </script>
+  <script src="js/main.js"></script>
+  </body>
+</html>

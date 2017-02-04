@@ -1,0 +1,55 @@
+<article id="movieView" ng-model="viewMovie">
+  <i id='back' class='fa fa-arrow-circle-o-left' ng-click="back()" aria-hidden='true'></i>
+  <div>
+    <img src='{{ viewMovie.poster }}'>
+  </div>
+
+  <div id="info">
+    <h2> {{ viewMovie.title }} </h2>
+    <p> Rated: {{ viewMovie.rated }} </p>
+    <p> Released: {{ viewMovie.release }} </p>
+    <p> Genres: <span class='genre' ng-repeat="genre in viewMovie.genre track by $index"> {{ genre }} </span></p>
+    <p> Runtime: {{ viewMovie.runTime }}</p>
+    <p> Language: {{ viewMovie.language }}</p>
+    <p> Country: {{ viewMovie.country }} </p>
+    <h3> Description: </h3>
+    <p class="desc"> {{ viewMovie.description }} </p>
+    <h4> Main Cast: </h4>
+    <p><span class='cast' ng-repeat="person in viewMovie.cast track by $index"> {{ person }} </span></p>
+    <p> Awards: {{ viewMovie.awards }} </p>
+    <p> Director: {{ viewMovie.director }} </p>
+    <p> Writer: {{ viewMovie.writer }} </p>
+
+    <div class='rating'>
+      <p> {{ viewMovie.imdbRating }} </p>
+      <p> IMBD Rating </p>
+    </div>
+
+    <div class='rating'>
+      <p> {{ viewMovie.metascore }} </p>
+      <p> Metascore Rating </p>
+    </div>
+  </div>
+</article>
+
+<article id="Reviews" ng-model="viewMovie">
+  <div id="newReview" class="reviewBox">
+    <h2> Add Your Review: </h2>
+    <form ng-submit="addReview()">
+      <span> Rating: </span><span id="rateYo"></span><br />
+      <h3>Review: </h3>
+      <textarea id="rta" rows="5" cols="70" placeholder="Write your review here..."></textarea><br />
+      Your name: <input type="text" id="rn" name="name" placeholder="John"/>
+      <button type="submit"> Add Review </button>
+    </form>
+  </div>
+
+  <div class="reviewBox">
+    <h2> Reviews: </h2>
+    <div class="review" ng-model="reviews" ng-repeat="review in reviews | filter:{movieID: reviews.num}:true">
+      <div id="userGlyph"> {{ review.name.charAt(0) }}</div>
+      <p> {{ review.name }}'s Rating: {{ review.rating }}</p>
+      <p> {{ review.text }} </p>
+    </div>
+  </div>
+</article>

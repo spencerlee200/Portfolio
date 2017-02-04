@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Red Seat Cinema</title>
+    <link href="https://fonts.googleapis.com/css?family=Oswald|Sansita+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.css">
+    <link rel="stylesheet" href="css/main.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-route.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.1.0/angularfire.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.5.3/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyAutBdtX8mjCTjSIEjq5SdJGuxMCQ-1hos",
+        authDomain: "mymovies-9c008.firebaseapp.com",
+        databaseURL: "https://mymovies-9c008.firebaseio.com",
+        storageBucket: "mymovies-9c008.appspot.com",
+        messagingSenderId: "391288599156"
+      };
+      firebase.initializeApp(config);
+    </script>
+  </head>
+
+  <body ng-app="MyApp" ng-controller="MyController">
+    <header>
+      <h1> Welcome to Red Seat Cinema </h1>
+    </header>
+
+    <section id="Movies" ng-view autoscroll="true">
+
+    </section>
+
+    <section id="genreBar" class="hidden">
+      <ul>
+        <li><p>All</p><li>
+        <li><p>Action</p></li>
+        <li><p>Adventure</p></li>
+        <li><p>Animation</p><li>
+        <li><p>Comedy</p></li>
+        <li><p>Crime</p></li>
+        <li><p>Documentary</p></li>
+        <li><p>Drama</p></li>
+        <li><p>Fantasy</p></li>
+        <li><p>Horror</p></li>
+        <li><p>Musical</p></li>
+        <li><p>Mystery</p></li>
+        <li><p>Romance</p></li>
+        <li><p>Sci-Fi</p></li>
+        <li><p>Western</p></li>
+      </ul>
+    </section>
+
+    <section id="AddHero" class="slant">
+      <div class="reverseSlant">
+        <h2> Don't see what you were looking for? </h2>
+        <p> Just type in any movie title to add it to our database </p>
+        <form id="form" ng-submit="addMovie()">
+          <input id="input" name="title" placeholder="Title..."/>
+          <button type="submit" id="add"> Add </button>
+        </form>
+      </div>
+    </section>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/rateYo/2.2.0/jquery.rateyo.min.js"></script>
+    <script src="//code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+    <script src="js/app.js"></script>
+  </body>
+</html>

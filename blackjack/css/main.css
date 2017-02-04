@@ -1,0 +1,23 @@
+body {
+  margin: 0 auto;
+  text-align: center;
+
+  background: url("../images/tablebg.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+#table {
+  color: white;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.container {
+  margin-top: 50px;
+}
+
+.title {
+  font-size: 60px;
+  font-family: 'Prompt', sans-serif;
+}

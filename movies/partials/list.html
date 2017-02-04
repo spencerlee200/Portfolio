@@ -1,0 +1,17 @@
+<div class="container">
+  <span id="Search"><input id="stext" class="hidden" placeholder="Search..." ng-keyup="$event.keyCode == 13 && search()"/><button ng-click="search()"><i class="fa fa-search" aria-hidden="true"></i></button></span>
+  <select id="Order" ng-model="options.text" ng-options="option for option in options" ng-change="order()">
+
+  </select>
+  <span id="filter" ng-click="sort()" ng-model="filter"> Genre: {{ filter[0] || "All" }} </span>
+</div>
+
+<div>
+  <h1 id="title" ng-model="filter"> {{ filter[0] || "All" }} Movies by {{ options.text }}:  </h1>
+  <ul>
+    <li ng-model="filter" ng-repeat="movie in movies | filter:{primaryGenre: filter[0] || undefined} | orderBy: filter[1]" class="mblock" ng-click="displayMovie(movie.title)">
+      <img ng-src='{{ movie.poster }}' />
+      <p id="movieTitle"> {{ movie.title }}
+    </li>
+  </ul>
+</div>

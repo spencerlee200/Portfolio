@@ -1,0 +1,67 @@
+body {
+  margin: 0;
+}
+
+#container{
+	width: 1200px;
+	overflow: hidden;
+	margin: 0 auto;
+	font-family: 'VT323';
+}
+
+header {
+  text-align:center;
+  padding-bottom:20px;
+	font-size:4em;
+	height: 40px;
+}
+
+nav {
+  line-height:30px;
+  height:607px;
+  width: 270px;
+  float:left;
+  padding-right: 10px;
+}
+
+nav > p {
+  font-size: 1.1em;
+}
+
+#navRight {
+  font-size:1.2em;
+  line-height:20px;
+  height:607px;
+  width: 105px;
+  float:right;
+	padding-left: 15px;
+}
+
+section {
+  width:800px;
+  float:left;
+	background-color:black;
+}
+
+#controls{
+  text-align: center;
+}
+
+#health {
+  width: 100px;
+  height: 15px;
+  margin: auto 0;
+  display: block;
+  vertical-align: middle;
+  background: red;
+  float: left;
+}
+
+.dbm {
+  margin-bottom: 0;
+}
+
+@font-face {
+  font-family: 'VT323';
+  src: url('fonts/VT323-Regular.ttf');
+}

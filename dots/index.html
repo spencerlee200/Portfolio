@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>DOTS</title>
+    <link href = "css/style.css" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+<div id="container">
+    <header>DOTS</header>
+    <nav>
+        <h2 id="controls"><b>SURVIVAL OF THE FITTEST</b></h2>
+        <p> It's eat or be eaten. Red dots will kill you, blue dots will help you escape. </p>
+        <p> Use the arrow keys to move. </p>
+        <center>
+          <img src="imgs/arrow.png" width="200" height="150" alt=""/></center> </p>
+          <p class="dbm"> Difficulty: </p>
+          <select id="diff">
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option>
+            <option value="extreme">Extreme</option>
+            <option value="nightmare">Nightmare</option>
+          </select>
+          <button id="btn">Click to Restart</button>
+          <p class="dbm"> High Score: <span id="highS"></span> points with <span id="highH"></span> health remaining.</p>
+        </center>
+    </nav>
+
+    <section>
+        <canvas id="canvas" width="800" height="600"> Please upgrade your browser..</canvas>
+    </section>
+
+    <div id="navRight">
+        <h2>PLAYER 1</h2>
+        <p> Health: <span class="health">100</span></p>
+        <p id="health">
+
+        </p>
+        <br />
+        <p id="score">SCORE: 0</p>
+    </div>
+</div>
+
+<script src="js/main.js"></script>
+</body>
+</html>

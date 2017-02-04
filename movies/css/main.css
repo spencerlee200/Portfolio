@@ -1,0 +1,403 @@
+/*///////////////////////////////
+        General Selectors
+///////////////////////////////*/
+body {
+  margin: 0 auto;
+  position: relative;
+  font-family: 'Oswald', sans-serif;
+}
+
+input:focus {
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+/*///////////////////////////////
+              Header
+///////////////////////////////*/
+header {
+  background: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0, 0, 0, 0.5)),url("../images/seat.jpg");
+  background-size: 100% 100%;
+  background-repeat: no-repeat;
+  color: white;
+  text-align: center;
+  padding-top: 50px;
+  height: 500px;
+}
+
+header h1 {
+  font-family: 'Sansita One', cursive;
+  font-size: 80px;
+  padding: 10px 0;
+  border-top: 5px solid white;
+  border-bottom: 5px solid white;
+  width: 90%;
+  margin: 0 auto;
+  margin-top: 100px;
+}
+
+/*///////////////////////////////
+            Filters
+///////////////////////////////*/
+.container {
+  width: 87%;
+  margin: 0 auto;
+  text-align: right;
+}
+
+#filter {
+  background: #F44336;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+#Search input{
+  background: transparent;
+  padding: 6px 3px;
+  font-size: 1em;
+  border: 3px solid #F44336;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+#Search button{
+  padding: 6px 7px;
+  font-size: 1em;
+  border-radius: 5px;
+  background: #F44336;
+  border: 3px solid #F44336;
+}
+
+#Order {
+  font-size: 1em;
+  font-family: 'Oswald', sans-serif;
+  height: 35px;
+  border: 0;
+  padding-bottom: 2px;
+  background: #F44336;
+}
+
+#genreBar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  background: #F44336;
+  overflow: scroll;
+  width: 300px;
+  -webkit-box-shadow: -4px 0px 5px 0px rgba(50, 50, 50, 0.75);
+  -moz-box-shadow:    -4px 0px 5px 0px rgba(50, 50, 50, 0.75);
+  box-shadow:         -4px 0px 5px 0px rgba(50, 50, 50, 0.75);
+  border-left: 2px solid black;
+}
+
+#genreBar ul {
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+#genreBar p {
+  margin: 0;
+  color: white;
+  font-size: 2em;
+  font-weight: bolder;
+  letter-spacing: .05em;
+  width: 300px;
+  height: 130px;
+  overflow: hidden;
+  line-height: 130px;
+  text-align: center;
+  background-size: 100% 100%;
+}
+
+#genreBar li:hover {
+  border-left: 8px solid #F44336;
+  background-size: 100% 101%;
+}
+
+/*///////////////////////////////
+          Movies Section
+///////////////////////////////*/
+#Movies {
+  padding: 30px 0;
+  overflow: auto;
+  background: url("../images/mbg.png");
+}
+
+#Movies ul {
+  list-style: none;
+  padding-left: 0;
+  width: 90%;
+  margin: 0 auto;
+}
+
+#Movies::after {
+  content: " ";
+  clear:both;
+  display:block;
+}
+
+#title {
+  margin: 5px auto;
+  text-align: center;
+  font-size: 3em;
+}
+
+/*///////////////////////////////
+          Movie Blocks
+///////////////////////////////*/
+#movieTitle {
+  margin: 0;
+}
+
+.mblock {
+  width: calc(100%/4);
+  height: 440px;
+  float: left;
+  margin: 10px 0;
+  text-align: center;
+}
+
+.mblock:hover {
+  cursor: pointer;
+}
+
+.mblock img {
+  width: 85%;
+  height: 420px;
+  margin: 0 auto;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+/*///////////////////////////////
+    Movie Information Items
+///////////////////////////////*/
+#movieView {
+  margin: 30px auto;
+  position: relative;
+}
+
+#movieView > div {
+  float: left;
+  width: 50%;
+  margin-bottom: 30px;
+}
+
+#movieView > div:first-of-type {
+  text-align: right;
+  margin: 0 auto;
+}
+
+#movieView img {
+  width: 70%;
+  margin: 0 auto;
+  margin-right: 20px;
+  box-shadow: 5px 5px 5px #888888;
+}
+
+#movieView h2 {
+  margin: 2px auto;
+  font-size: 40px;
+}
+
+#movieView h3 {
+  border-bottom: 1px solid #666;
+  padding-bottom: 2px;
+  margin-bottom: 5px;
+  width: 70%;
+}
+
+#movieView h4 {
+  margin: 5px 0;
+  border-bottom: 1px solid #666;
+  padding-bottom: 2px;
+  width: 70%;
+}
+
+#back {
+  position: absolute;
+  top: 0;
+  font-size: 55px;
+  left: 140px;
+}
+
+#back:hover {
+  font-size: 58px;
+  cursor: pointer;
+}
+
+#info > p {
+  margin: 12px 0;
+}
+
+.desc {
+  width: 600px;
+  margin-top: 0;
+}
+
+.genre {
+  border-radius: 15px;
+  background: #FFEB3B;
+  padding: 5px;
+  margin: 5px 5px;
+}
+
+.cast {
+  border-radius: 15px;
+  background: #03A9F4;
+  padding: 5px;
+  margin-right: 5px;
+}
+
+.rating {
+  margin-top: 20px;
+  text-align: center;
+  float: left;
+  width: 150px;
+  margin-right: 2%;
+  border: 2px solid black;
+  border-radius: 5px;
+}
+
+.rating p {
+  font-size: 30px;
+  margin: 0 auto;
+}
+
+.rating p:last-of-type {
+  font-size: 1em;
+  background: #FFEB3B;
+  border-top: 2px solid black;
+  padding: 3px 0;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+/*///////////////////////////////
+            Reviews
+///////////////////////////////*/
+#Reviews::before {
+  content: " ";
+  display: block;
+  clear: both;
+}
+
+#newReview {
+  margin: 0 auto;
+  margin-left: 200px;
+  width: 520px;
+}
+
+#newMovie h2, .reviewBox h2 {
+  margin: 5px 0;
+  border-bottom: 2px solid #333;
+  width: 80%;
+}
+
+#newReview h3 {
+  margin: 10px auto;
+}
+
+#newReview textarea {
+  resize: none;
+  outline: none;
+}
+
+#newReview span {
+  float: left;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+#newReview button {
+  display: inline;
+}
+
+#userGlyph {
+  width: 80px;
+  height: 80px;
+  background: #F44336;
+  color: white;
+  font-size: 4em;
+  font-family: 'Sansita One', cursive;
+  -moz-border-radius: 50px;
+  -webkit-border-radius: 50px;
+  border-radius: 50px;
+  text-align:center;
+  line-height: 80px;
+  float: left;
+  margin-right: 7px;
+}
+
+.review {
+  width: 550px;
+  overflow: auto;
+  height: 90px;
+  margin-left: 30px;
+  margin-bottom: 15px;
+  font-size: .9em;
+}
+
+.review p {
+  margin: 5px auto;
+}
+
+.reviewBox {
+  float: left;
+}
+
+.reviewBox h2 {
+  margin-top: 5px;
+  margin-bottom: 15px;
+}
+
+/*///////////////////////////////
+        Add Hero Section
+///////////////////////////////*/
+#AddHero {
+  text-align: center;
+  color: white;
+  background: url("../images/seats.jpg");
+  height: 750px;
+}
+
+#AddHero div {
+  padding-top: 150px;
+}
+
+#AddHero h2 {
+  font-family: 'Sansita One', cursive;
+  font-size: 60px;
+  margin-bottom: 0;
+}
+
+#AddHero p {
+  font-size: 30px;
+}
+
+#form input {
+  padding: 15px 30px;
+  width: 60%;
+  border: none;
+  border-radius: 5px;
+  height: 35px;
+  font-size: 18px
+}
+
+#form button {
+  padding: 22px 40px;
+  border: none;
+  border-radius: 5px;
+  font-size: 18px;
+  background: #F44336;
+  color: white;
+}
+
+#form button:hover {
+  background: #D32F2F;
+  cursor: pointer;
+}
