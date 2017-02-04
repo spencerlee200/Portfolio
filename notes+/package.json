@@ -1,0 +1,26 @@
+{
+  "name": "node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {},
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "connect-ensure-login": "^0.1.1",
+    "dotenv": "^4.0.0",
+    "ejs": "^2.5.3",
+    "express": "^4.14.0",
+    "express-session": "^1.14.2",
+    "glob": "^7.1.1",
+    "mongoose": "^4.7.7",
+    "passport": "^0.3.2",
+    "passport-github2": "^0.1.10",
+    "passport-google-oauth20": "^1.0.0",
+    "passport-local": "^1.0.0",
+    "pug": "^2.0.0-beta6",
+    "request": "^2.79.0",
+    "request-promise": "^4.1.1"
+  }
+}

@@ -1,0 +1,337 @@
+/*////////////////////////////////
+        General Selectors
+////////////////////////////////*/
+body {
+  background: url('/IMG/bg.png');
+}
+.title {
+  font-family: 'Permanent Marker', cursive;
+  font-size: 4em;
+  padding-top: 100px;
+}
+
+/*/////////////////////////////////
+         Doodles and Menu
+////////////////////////////////*/
+.gh-btn, .gp-btn, .profile-btn, .new, .notebooks, .back-btn,
+.editnote-btn, .deletenote-btn  {
+  font-family: 'Kalam', cursive;
+  margin-right: 20px;
+  border: solid 2px #222;
+  -ms-flex-item-align: center;
+     -ms-grid-row-align: center;
+     align-self: center;
+  background: transparent;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  color: #41403E;
+  outline: none;
+  letter-spacing: 1px;
+  font-size: 1.2em;
+  box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+.nav {
+  position: relative;
+}
+.dropdown-menu {
+  margin-right: 30px;
+}
+.nav::after {
+  clear: both;
+  content: " ";
+}
+.profile-btn {
+  margin-right: 30px;
+}
+.back-btn {
+  margin-top: 15px;
+  margin-left: 30px;
+}
+
+/*/////////////////////////////////
+           New NoteBook
+////////////////////////////////*/
+.new {
+  margin-top: 20px;
+  padding: 0;
+  clear: both;
+}
+.newtitle, .notebookstitle {
+  border-bottom: 2px solid #222;
+  width: 99%;
+}
+.notebooks {
+  margin-top: 20px;
+  padding: 0;
+  clear: both;
+}
+.new-btn, .del-btn {
+  font-family: 'Kalam', cursive;
+  border: solid 2px #222;
+  -ms-flex-item-align: center;
+     -ms-grid-row-align: center;
+     align-self: center;
+  background: transparent;
+  -webkit-transition: all .5s ease;
+  transition: all .5s ease;
+  color: #41403E;
+  outline: none;
+  letter-spacing: 1px;
+  font-size: .9em;
+  box-shadow: 20px 38px 34px -26px rgba(0, 0, 0, 0.2);
+  border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+}
+
+/*/////////////////////////////////
+          Confirm Delete
+////////////////////////////////*/
+.del-btn {
+  margin-right: 20px;
+  margin-top: 10px;
+  font-size: 1em;
+  border-color: #B71C1C;
+  color: #B71C1C;
+  font-weight: bold;
+}
+.del-btn:hover {
+  border-color: #E53935;
+  background-color: #E53935;
+  color: white;
+}
+.confirmDeleteText {
+  font-size: 1em;
+}
+
+/*/////////////////////////////////
+            Notebooks
+  Special thanks to @jenepierce
+       on codepen for the
+     original notebook frame
+////////////////////////////////*/
+.notebook {
+  border: 1px solid black;
+  box-shadow: 1px 1px 0px whitesmoke, 2px 2px 0px black, inset 1px 0px 0px black;
+  border-radius: 5px 15px 15px 5px;
+  margin: 0 auto;
+  margin-left: 6%;
+  margin-bottom: 40px;
+  position: relative;
+  height: 250px;
+}
+.notebook .ribbon {
+  border-radius: 0 0 2px 2px;
+  position: absolute;
+  top: -1px;
+  bottom: -3px;
+  right: 1.5em;
+  width: 1.2em;
+  z-index: 2;
+}
+.notebook .wrapper {
+  border: 1px solid black;
+  border-left: 2px solid black;
+  position: absolute;
+  height: 2.1em;
+  top: 7.5em;
+  left: -1px;
+  right: -1px;
+  z-index: 1;
+}
+.notebook h1 {
+  font-family: "Lato", Arial;
+  font-size: 1.2em;
+  margin: 4.2em 0 0 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+.homeIcon {
+  width: 250px;
+  margin: 0 auto;
+  margin-top: 10px;
+}
+.invite {
+  font-size: 3em;
+  margin-top: 20px;
+  font-family: 'Permanent Marker', cursive;
+}
+
+/*/////////////////////////////////
+        Table of Contents
+////////////////////////////////*/
+.ptitle {
+  text-align: center;
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+  font-size: 3em;
+  font-family: 'Permanent Marker', cursive;
+  letter-spacing: 2;
+}
+.preview {
+  width: 98%;
+  overflow: hidden;
+  text-overflow: clip;
+}
+.precontent {
+  margin-left: 15px;
+}
+.notelink {
+  text-decoration: none;
+  color: #41403E;
+}
+.notelink:hover {
+  text-decoration: none;
+  color: #0D47A1;
+}
+.notelink p {
+  padding: 15px auto;
+}
+
+/*/////////////////////////////////
+            Note Views
+////////////////////////////////*/
+.tutorial {
+  margin-left: 12px;
+  margin-top: 4px;
+  font-family: 'Kalam', cursive;
+  color: #666;
+}
+.tutorial-note {
+  font-size: 1.2em;
+  margin-left: 5px;
+  margin-top: 4px;
+  font-family: 'Kalam', cursive;
+  color: #666;
+}
+.editnote-btn, .deletenote-btn {
+  margin-top: 15px;
+}
+.editnote-btn {
+  border-color: #01579B;
+  color: #01579B;
+}
+.editnote-btn:hover {
+  border-color: #039BE5;
+  background-color: #039BE5;
+  color: white;
+}
+.deletenote-btn {
+  border-color: #B71C1C;
+  color: #B71C1C;
+}
+.deletenote-btn:hover {
+  border-color: #E53935;
+  background-color: #E53935;
+  color: white;
+}
+.post {
+  float: left;
+  width: calc(100%/3 - 12%);
+  height: 150px;
+  margin-right: 3.6%;
+  margin-bottom: 25px;
+  position: relative;
+}
+.post:nth-of-type(5) {
+  margin-right: 0;
+}
+.posttext{
+  margin-top: 5px;
+  font-weight: lighter;
+}
+.posttext {
+  display: block;
+  padding:25px 25px 40px;
+  margin:0 auto 20px auto;
+  width:100%;
+  height:150px;
+  border:0;
+  background: rgba(255, 234, 0,.6);
+  box-shadow:0 4px 6px rgba(0,0,0,0.1);
+}
+.posttext:focus {
+  outline: none;
+}
+.dr {
+  margin-right: 0;
+}
+.killPost {
+  position: absolute;
+  top: -12px;
+  right: 55px;
+  font-size: 1.8em;
+  color: #E53935;
+}
+.killPost:hover {
+  text-decoration: none;
+  color: red;
+}
+.page {
+  width: 100%;
+  border: none;
+  background: transparent;
+}
+.page:focus {
+  outline: none;
+}
+.movie {
+  margin-bottom: 30px;
+}
+.poster {
+  width: 100%;
+  height: 250px;
+  margin: 0 auto;
+  margin-bottom: 2px;
+}
+.poster-logged-out {
+  width: 90%;
+}
+
+/*/////////////////////////////////
+          Movie View
+////////////////////////////////*/
+.fullPoster {
+  width: 40%;
+}
+.fullPoster img {
+  margin-left: 20px;
+  width: 90%;
+}
+.fullInfo {
+  width: 60%;
+}
+.infoLabel {
+  font-weight: bolder;
+  font-style: italic;
+}
+.imdb-btn {
+  background: #f5de50;
+  color: #222;
+}
+.check {
+  color: #2E7D32;
+  font-size: 1.2em;
+}
+.check:hover {
+  text-decoration: none;
+  color: #43A047;
+}
+.remove {
+  color: #B71C1C;
+  font-size: 1.2em;
+}
+.remove:hover {
+  text-decoration: none;
+  color: #E53935;
+}
+.shade {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+.private {
+  clear: both;
+  width: 700px;
+  margin: 0 auto;
+  margin-left: 20%;
+}

@@ -1,0 +1,95 @@
+html
+  head
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin="anonymous")
+    link(href="https://fonts.googleapis.com/css?family=Kalam|Permanent+Marker" rel="stylesheet")
+    link(href="/CSS/app.css", rel="stylesheet")
+    title= title
+  body
+    if !user
+      section
+          a.btn.gh-btn.pull-right(href="/auth/github") Login with Github
+          a.btn.gp-btn.pull-right(href="/auth/google") Login with Google
+      section.text-center
+        h1.title= msg
+
+        div.row
+          img.img-responsive.homeIcon(src="/IMG/notebook.png")
+          h2.invite What will you create?
+
+    else
+      div.row
+        div.nav
+          div.btn-group.pull-right(style="margin-top: 15px;")
+            button.btn.profile-btn.dropdown-toggle(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")= user.username
+              span.caret(style="margin-left: 5px;")
+            ul.dropdown-menu
+              li
+                a(href="/logout") Logout
+
+          p.pTitle= title
+
+        div.col-md-3.col-md-offset-1
+          div.new
+            div.panel-heading.text-center.newTitle Create a new notebook
+            div.panel-body
+              form(action='/' method='post')
+                div.form-group
+                  label(for='title') Title:
+                  input.form-control(type='text', placeholder='Title...', name='title' required)
+
+                div.form-group
+                  label(for="access") Access:
+                  select.form-control(name="access")
+                    option(value="true") Public
+                    option(value="false") Private
+
+                div.form-group.hidden
+                  input.form-control(type='text', name='owner_id', value= user.id required)
+
+                div.form-group
+                  label(for="theme") Theme:
+                  select.form-control(name="theme" id="theme")
+                    option Ocean
+                    option Leather
+                    option Night
+                    option Beach
+                    option Forrest
+                    option Coral
+                    option -Custom-
+
+                div(id="advanced").hidden
+                  div.form-group
+                    label(for='p') Notebook Color:
+                    input.form-control(type='text', placeholder='#000000', name='p')
+
+                  div.form-group
+                    label(for='s') Stripe Color:
+                    input.form-control(type='text', placeholder='#000000', name='s')
+
+                  div.form-group
+                    label(for='h') Ribbon Color:
+                    input.form-control(type='text', placeholder='#000000 or transparent', name='h')
+
+                  div.form-group
+                    label(for='c') Text Color:
+                    input.form-control(type='text', placeholder='#000000', name='c')
+
+                button.btn.new-btn.pull-right(type='submit') Create
+
+        div.col-md-7
+          div.notebooks
+            div.panel-heading.text-center.notebooksTitle Your Notebooks
+            div.panel-body
+              each notebook in notebooks
+                if user.id == notebook.owner_id
+                  a(href="/notebook/" + notebook._id)
+                    div.notebook.col-md-3(style= "background: " + notebook.primary + ";")
+                      h1(style="color: " + notebook.color + ";")= notebook.title
+                      div.ribbon(style= "background: " + notebook.highlight + ";")
+                      div.wrapper(style= "background: " + notebook.secondary + ";")
+
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", crossorigin="anonymous")
+    script(src="/JS/konami.js")
+    script(src="/JS/app.js")

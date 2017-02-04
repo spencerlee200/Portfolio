@@ -1,0 +1,97 @@
+html
+  head
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin="anonymous")
+    link(href="https://fonts.googleapis.com/css?family=Kalam|Permanent+Marker" rel="stylesheet")
+    link(href="/CSS/app.css", rel="stylesheet")
+    title= title
+  body
+    if !user
+        section(style="margin-top: 15px")
+            a.btn.gh-btn.pull-right(href="/auth/github") Login with Github
+            a.btn.gp-btn.pull-right(href="/auth/google") Login with Google
+
+        p.pTitle= movie.title
+
+        div.col-md-8.col-md-offset-2
+          div.notebooks
+            div.panel-body
+              div.fullPoster.pull-left
+                img(src= movie.poster)
+              div.fullInfo.pull-left
+                p
+                  span.infoLabel Plot:&nbsp;
+                  span= movie.plot
+                p
+                  span.infoLabel Released:&nbsp;
+                  span= movie.year
+                p
+                  span.infoLabel Rated:&nbsp;
+                  span= movie.rated
+                p
+                  span.infoLabel Genre:&nbsp;
+                  span= movie.genre
+                p
+                  span.infoLabel Directed By:&nbsp;
+                  span= movie.director
+                p
+                  span.infoLabel Main Cast:&nbsp;
+                  span= movie.actors
+                p
+                  span.infoLabel Runtime:&nbsp;
+                  span= movie.runtime
+
+                a.btn.imdb-btn(href="http://www.imdb.com/title/" + movie.imdbID) Read More on IMDB
+    else
+      div.row
+        if messages
+            p= messages
+
+        div.nav
+            a.btn.back-btn.pull-left(href= back)
+              span.glyphicon.glyphicon-arrow-left(aria-hidden='true' style="margin-right: 5px;")
+              span Back
+
+            p.pTitle= movie.title
+
+            div.btn-group.pull-right(style="margin-top: 15px;")
+              button.btn.profile-btn.dropdown-toggle(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")= user.username
+                span.caret(style="margin-left: 5px;")
+              ul.dropdown-menu
+                li
+                  a(href="/logout") Logout
+
+        div.col-md-8.col-md-offset-2
+          div.notebooks
+            div.panel-body
+              div.fullPoster.pull-left
+                img(src= movie.poster)
+              div.fullInfo.pull-left
+                p
+                  span.infoLabel Plot:&nbsp;
+                  span= movie.plot
+                p
+                  span.infoLabel Released:&nbsp;
+                  span= movie.year
+                p
+                  span.infoLabel Rated:&nbsp;
+                  span= movie.rated
+                p
+                  span.infoLabel Genre:&nbsp;
+                  span= movie.genre
+                p
+                  span.infoLabel Directed By:&nbsp;
+                  span= movie.director
+                p
+                  span.infoLabel Main Cast:&nbsp;
+                  span= movie.actors
+                p
+                  span.infoLabel Runtime:&nbsp;
+                  span= movie.runtime
+
+                a.btn.imdb-btn(href="http://www.imdb.com/title/" + movie.imdbID) Read More on IMDB
+
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", crossorigin="anonymous")
+    script(src="/JS/konami.js")
+    script(src="/JS/app.js")

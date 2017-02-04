@@ -1,0 +1,184 @@
+html
+  head
+    link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css", rel="stylesheet", integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u", crossorigin="anonymous")
+    link(href="https://fonts.googleapis.com/css?family=Kalam|Permanent+Marker" rel="stylesheet")
+    link(href="/CSS/app.css", rel="stylesheet")
+    title= title
+  body
+    if !user
+      if note.access == false
+        section(style="margin-top: 15px")
+            a.btn.gh-btn.pull-right(href="/auth/github") Login with Github
+            a.btn.gp-btn.pull-right(href="/auth/google") Login with Google
+
+        div.row.text-center
+          img.img-responsive.private(src="/IMG/private.png")
+
+      else
+        section(style="margin-top: 15px")
+            a.btn.gh-btn.pull-right(href="/auth/github") Login with Github
+            a.btn.gp-btn.pull-right(href="/auth/google") Login with Google
+
+        if note.type == "Default"
+          div.col-md-8.col-md-offset-2
+            div.notebooks
+              div.panel-heading.text-center.notebooksTitle= note.title
+              div.panel-body
+                p= note.content
+
+        else if note.type == "Board"
+          div.col-md-8.col-md-offset-2
+            div.notebooks
+              div.panel-heading.text-center.notebooksTitle= note.type
+              div.panel-body(style="padding-right: 0;")
+                if note.type == "Board"
+                  each post in posts
+                    div.post
+                      span.killPost.glyphicon.glyphicon-pushpin
+                      form(action='/editPost/' + post._id, method='post' id= "form_" + post._id)
+                        div.posttext(name='text' id= post._id) #{post.text}
+
+        else if note.type == "To Watch"
+          div.col-md-8.col-md-offset-2
+            div.notebooks
+              div.panel-heading.text-center.notebooksTitle= note.title
+              div.panel-body(style="padding-right: 0;")
+                div.row
+                  each movie in movies
+                      div.movie.col-md-3
+                        a(href="/movie/" + movie.title)
+                          img.img-responsive.poster-logged-out(src= movie.poster)
+
+        else if note.type == "To Read"
+          div.col-md-8.col-md-offset-2
+            div.notebooks
+              div.panel-heading.text-center.notebooksTitle= note.title
+              div.panel-body(style="padding-right: 0;")
+                div.row
+                  each book in books
+                      div.movie.col-md-3
+                        a(href="/book/" + book.title)
+                          img.img-responsive.poster-logged-out(src= book.cover)
+    else
+      div.row
+        div.nav
+            a.btn.back-btn.pull-left(href= '/notebook/' + note.notebook_id)
+              span.glyphicon.glyphicon-arrow-left(aria-hidden='true' style="margin-right: 5px;")
+              span Back
+
+            p.pTitle
+              span= title
+              span 	/&nbsp;
+              span= note.title
+
+            div.btn-group.pull-right(style="margin-top: 15px;")
+              button.btn.profile-btn.dropdown-toggle(type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false")= user.username
+                span.caret(style="margin-left: 5px;")
+              ul.dropdown-menu
+                li
+                  a(href="/logout") Logout
+
+        if note.type == "Default"
+          div.col-md-8.col-md-offset-2
+            div.notebooks
+              div.panel-body
+                form(action='/edit/note/' + note._id, method='post', id="editpage")
+                  textarea.page(name='text')= note.content
+
+            a.btn.deletenote-btn.pull-right(href="/note/delete/" + note._id + "/" + note.notebook_id) Delete
+            button.btn.editnote-btn.pull-right Update
+
+            span.tutorial-note.pull-left Click to edit note and update to finalize changes
+        else
+          div.col-md-3.col-md-offset-1
+            div.new
+              if note.type == "To Watch"
+                div.panel-heading.text-center.newTitle Add a Movie
+                div.panel-body
+                    form(action='/add/movie' method='post')
+                      div.form-group
+                        label(for='title') Title:
+                        input.form-control(type='text', placeholder='Title...', name='title' required)
+
+                      div.form-group.hidden
+                        input.form-control(type='text', name='note_id', value= note._id required)
+
+                      button.btn.new-btn.pull-right(type='submit') Add
+                a.btn.del-btn.dr.pull-right(href="/note/delete/" + note._id + "/" + note.notebook_id) Delete Note
+
+              else if note.type == "To Read"
+                div.panel-heading.text-center.newTitle Add a Book
+                div.panel-body
+                    form(action='/add/book' method='post')
+                      div.form-group
+                        label(for='title') Title:
+                        input.form-control(type='text', placeholder='Title...', name='title'  required)
+
+                      div.form-group
+                        label(for='author') Author:
+                        input.form-control(type='text', placeholder='Author...', name='author' required)
+
+                      div.form-group.hidden
+                        input.form-control(type='text', name='note_id', value= note._id required)
+
+                      button.btn.new-btn.pull-right(type='submit') Add
+                a.btn.del-btn.dr.pull-right(href="/note/delete/" + note._id + "/" + note.notebook_id) Delete Note
+
+              else
+                div.panel-heading.text-center.newTitle Add a Post
+                div.panel-body
+                    form(action='/add/post' method='post')
+                      div.form-group
+                        label(for='text') Note:
+                        textarea.form-control(type='text', placeholder='Text...', rows='3', name='text')
+
+                      div.form-group.hidden
+                        input.form-control(type='text', name='note_id', value= note._id required)
+
+                      button.btn.new-btn.pull-right(type='submit') Add
+                a.btn.del-btn.dr.pull-right(href="/note/delete/" + note._id + "/" + note.notebook_id) Delete Note
+
+          div.col-md-7
+            div.notebooks
+              div.panel-heading.text-center.notebooksTitle= note.type
+              div.panel-body(style="padding-right: 0;")
+                if note.type == "Board"
+                  each post in posts
+                    div.post
+                      a.killPost.glyphicon.glyphicon-pushpin(href="/post/delete/" + post._id)
+                      form(action='/editPost/' + post._id, method='post' id= "form_" + post._id)
+                        textarea.posttext(name='text' id= post._id) #{post.text}
+                else if note.type == "To Watch"
+                  div.row
+                  each movie in movies
+                      div.movie.col-md-3
+                        a(href="/movie/" + movie.title)
+                          if movie.status == "false"
+                            img.img-responsive.poster(src= movie.poster)
+                          else
+                            img.img-responsive.shade.poster(src= movie.poster)
+                        a.pull-right.glyphicon.glyphicon-ok-circle.check(href="/check/movie/" + movie._id)
+                        a.pull-right.glyphicon.glyphicon-remove-circle.remove(href="/remove/movie/" + movie._id)
+
+                else if note.type == "To Read"
+                  div.row
+                  each book in books
+                      div.movie.col-md-3
+                        a(href="/book/" + book.title)
+                          if book.status == "false"
+                            img.img-responsive.poster(src= book.cover)
+                          else
+                            img.img-responsive.shade.poster(src= book.cover)
+                        a.pull-right.glyphicon.glyphicon-ok-circle.check(href="/check/book/" + book._id)
+                        a.pull-right.glyphicon.glyphicon-remove-circle.remove(href="/remove/book/" + book._id)
+              if note.type == "To Read"
+                span.tutorial.pull-left Hit the red X to delete and the green √ to mark as read
+              else if note.type == "To Watch"
+                span.tutorial.pull-left Hit the red X to delete and the green √ to mark as watched
+              else if note.type == "Board"
+                span.tutorial.pull-left Click note to edit or click the red pin to delete
+
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js")
+    script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js", integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa", crossorigin="anonymous")
+    script(src="/JS/konami.js")
+    script(src="/JS/app.js")
