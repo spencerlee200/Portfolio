@@ -3,6 +3,8 @@
   In this portfolio I am hoping to showcase some of the projects that I have had the pleasure of working on so far in my career as a Web Developer. These projects were mostly created during my time as a student at Full Sail University.
 
 ## Baldwin's Books
+  ![Baldwin's Books Landing page]
+  (https://spencerlee200.github.com/resources/images/bb.png)
   Technologies Used: Laravel, PHP, Pug, CSS3, Bootstrap,
   mySQL, and the Stripe Payment API
 
