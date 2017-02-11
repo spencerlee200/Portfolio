@@ -8,7 +8,7 @@
   Technologies Used: Laravel, PHP, Blade, CSS3, Bootstrap,
   mySQL, and the Stripe Payment API
 
-  Baldwin's Books was a fully functioning Laravel e-commerce site I helped create in a team with 2 other students. The project lasted about 2 weeks and I was really proud of the way it turned out. It is definitely my best work in PHP and the MEAN stack so far. You can check out a demo of this application here.
+  Baldwin's Books was a fully functioning Laravel e-commerce site I helped create in a team with 2 other students. The project lasted about 2 weeks and I was really proud of the way it turned out. It is definitely my best work in PHP and the MEAN stack so far. You can check out a demo of this application [here]( https://youtu.be/F7EI7WzmjQY).
 
 ## Blackjack
   ![Blackjack page]
@@ -37,11 +37,11 @@
   (https://github.com/spencerlee200/Portfolio/blob/master/resources/images/notes.png)
   Technologies Used: Node, Express, Mongoose, MongoDB, Passport, Pug, Google Books API and the OMDB API
 
-  This was probably my favorite project I've gotten to work on so far. The challenge for this project was to create a node application with MVC architecture that used at least one API and had full CRUD. I decided to created a notes applications where users could create their own custom notebooks as well as custom notes. Users are able to quickly create boards, to watch, and to read list with the help of some API implementation. Users can even set their notebooks to public or private to share them with others. Check out the demo here.
+  This was probably my favorite project I've gotten to work on so far. The challenge for this project was to create a node application with MVC architecture that used at least one API and had full CRUD. I decided to created a notes applications where users could create their own custom notebooks as well as custom notes. Users are able to quickly create boards, to watch, and to read list with the help of some API implementation. Users can even set their notebooks to public or private to share them with others. Check out the demo [here](https://youtu.be/k9lcfve6gXg).
 
 ## Secret Show
   ![Secret Show Teaser]
   (https://github.com/spencerlee200/Portfolio/blob/master/resources/images/secretshow.png)
   Technologies Used: Angular, firebase, HTML5, and CSS3
 
-  For this project I worked with one of my classmates to create a website for a friend in Full Sail's film project. He wanted a static web page where people could watch the pilot to his tv show so we gave him that plus a little more flair. This was really fun because it was my first experience working with a client.
+  For this project I worked with one of my classmates to create a website for a friend in Full Sail's film project. He wanted a static web page where people could watch the pilot to his tv show so we gave him that plus a little more flair. This was really fun because it was my first experience working with a client. You can see it live [here](https://spencerlee200.github.io/Portfolio/secretshow/).
